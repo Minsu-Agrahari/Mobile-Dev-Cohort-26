@@ -1,43 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React from "react";
 
 const HomeScreen = () => {
-    const isActive = true;
 
-    const buttonStyle = StyleSheet.compose(
-        styles.button,
-        isActive ? styles.activeButton : null
-    )
+    const {height, width} = useWindowDimensions();
+
+    console.log(height, width);
+
     return (
-        <View style={styles.container}>
-            {/* @ts-ignore */}
-            <View style={buttonStyle}>
-                <Text style={styles.buttonText}>Composed Style</Text>
-            </View>
+        <View>
+            <Text>HomeScreen</Text>
         </View>
     );
 };
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    button: {
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 10,
-        backgroundColor: "#ccc",
-    },
-    activeButton: {
-        backgroundColor: "#6C63FF",
-    },
-    buttonText: {
-        color: "white",
-        fontWeight: "bold",
-        fontSize: 16,
-    },
-});
+const styles = StyleSheet.create({});
