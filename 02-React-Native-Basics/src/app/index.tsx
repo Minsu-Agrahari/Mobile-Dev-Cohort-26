@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, StatusBar, Text, View } from "react-native";
 import React from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -17,6 +17,7 @@ const HomeScreen = () => {
                 paddingRight: insets.right,
             }}
         >
+            <StatusBar barStyle={"dark-content"} />
             <Text>HomeScreen</Text>
         </View>
     );
