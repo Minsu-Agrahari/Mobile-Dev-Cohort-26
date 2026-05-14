@@ -1,65 +1,27 @@
-import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-function UnsafeScreen() {
+const HomeScreen = () => {
+    const insets = useSafeAreaInsets();
+
+    console.log(insets);
+
     return (
         <View
             style={{
                 flex: 1,
-                backgroundColor: "#1c1c1e",
+                paddingTop: insets.top,
+                paddingBottom: insets.bottom,
+                paddingLeft: insets.left,
+                paddingRight: insets.right,
             }}
         >
-            <Text
-                style={{
-                    color: "#fff",
-                    fontSize: 18,
-                    padding: 16,
-                }}
-            >
-                Header (bleeds under notch!)
-            </Text>
-
-            <Text style={{ color: "#aaa", padding: 16 }}>
-                This content might be hidden behind the status bar in dark mode.
-            </Text>
+            <Text>HomeScreen</Text>
         </View>
-    );
-}
-
-function SafeScreen() {
-    return (
-        <SafeAreaView
-            style={{
-                flex: 1,
-                backgroundColor: "#1c1c1e",
-            }}
-        >
-            <Text
-                style={{
-                    color: "#fff",
-                    fontSize: 18,
-                    padding: 16,
-                }}
-            >
-                Header (safely below notch ... 🌹)
-            </Text>
-
-            <Text style={{ color: "#aaa", padding: 16 }}>
-                This content respects the safe area on all devices. 🤗
-            </Text>
-        </SafeAreaView>
-    );
-}
-const index = () => {
-    return (
-        <>
-            <SafeScreen />
-            {/* <UnsafeScreen /> */}
-        </>
     );
 };
 
-export default index;
+export default HomeScreen;
 
 const styles = StyleSheet.create({});
