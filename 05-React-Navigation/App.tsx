@@ -2,22 +2,18 @@ import * as React from "react";
 import { View, Text } from "react-native";
 import { createStaticNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import DetailScreens from "./src/screens/DetailScreens";
+import HomeScreen from "./src/screens/HomeScreen";
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
-
-const RootStack = createNativeStackNavigator({
+const Stack = createNativeStackNavigator({
+  // Screens
   screens: {
     Home: HomeScreen,
+    Details: DetailScreens,
   },
 });
 
-const Navigation = createStaticNavigation(RootStack);
+const Navigation = createStaticNavigation(Stack);
 
 export default function App() {
   return <Navigation />;
