@@ -1,0 +1,48 @@
+# Dependencies
+node_modules
+
+# Build folders
+dist
+build
+out
+
+# Expo / React Native
+.expo
+.expo-shared
+
+# Next.js
+.next
+
+# Coverage
+coverage
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files
+*.min.js
+*.bundle.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache
+.turbo
+
+# Android / iOS build folders
+android/app/build
+ios/build
