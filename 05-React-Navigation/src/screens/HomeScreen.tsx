@@ -14,9 +14,11 @@ const HomeScreen = () => {
 
       <Link screen={"Details"}>Go To Detail → Link</Link>
 
-      <Button onPress={() => navigation.navigate("Details")}>
+      <Button onPress={() => navigation.navigate("Details", {userName: "Minsu Agrhari"})}>
         Go To Detail Page via (Navigation)
       </Button>
+
+
     </View>
   );
 };

@@ -3,23 +3,23 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "@react-navigation/elements";
 
-const DetailScreens = ({route}: any) => {
-  // Hook
+const ProfileScreen = () => {
+  // hooks
   const navigation = useNavigation<any>();
-  const {userName} = route.params;
 
   return (
     <View>
-      <Text>Welcome {userName} </Text>
-      <Button onPress={() => navigation.goBack()}>Go Back</Button>
+      <Text>ProfileScreen</Text>
 
-      <Button onPress={() => navigation.navigate("Profile")}>
-        Go To Profile
+      <Button onPress={() => navigation.popToTop()}>Go To to Screen</Button>
+
+      <Button onPress={() => navigation.popTo("Details")}>
+        Go To Detail Page
       </Button>
     </View>
   );
 };
 
-export default DetailScreens;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({});
