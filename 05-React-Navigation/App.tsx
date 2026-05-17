@@ -7,17 +7,10 @@ import DetailScreens from "./src/screens/DetailScreens";
 import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
 
-const Stack = createNativeStackNavigator({
-  // Screens
-  screens: {
-    Home: HomeScreen,
-    Details: DetailScreens,
-    Profile: ProfileScreen,
-  },
-});
-
-const Navigation = createStaticNavigation(Stack);
+import DynamicStackNavigator from "./src/navigator/stack/DynamicStackNavigator";
+import StaticStackNavigator from "./src/navigator/stack/StaticStackNavigator";
 
 export default function App() {
-  return <Navigation />;
+  return <DynamicStackNavigator />;
+  // return <StaticStackNavigator/>
 }
